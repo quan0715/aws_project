@@ -82,6 +82,8 @@ function setAudioState(flag) {
     for (let i = 0; i < track.length; i++) {
         track[i].enabled = flag;
     }
+    document.querySelector("#voice_label").style.background = (flag ? "#ABFF78":"#FF6666")
+    // console.log(document.querySelector("#voice_label"))
 }
 
 
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var videoEnabledField = document.getElementById("video_enabled_inp");
     var camera_image = document.querySelector("#camera_mute");
     var mic_image = document.querySelector("#mic_mute");
-
+    var video = document.querySelector("#videoElement")
     startCamera();
 
     camera_image.addEventListener('click', () => {
@@ -116,5 +118,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         else {
             alert("Error! Your mic can not be accessed!");
         }
+    });
+
+    video.addEventListener('volumechange', (e) =>{
+        console.log('Volumechange')
     });
 });
