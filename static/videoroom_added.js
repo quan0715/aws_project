@@ -82,10 +82,7 @@ function setAudioState(flag) {
     for (let i = 0; i < track.length; i++) {
         track[i].enabled = flag;
     }
-    document.querySelector("#voice_label").style.background = (flag ? "#ABFF78":"#FF6666")
-    // console.log(document.querySelector("#voice_label"))
 }
-
 
 document.addEventListener("DOMContentLoaded", (event) => {
     // 當document被完整的讀取跟解析後就會被觸發
@@ -118,9 +115,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
         else {
             alert("Error! Your mic can not be accessed!");
         }
-    });
-
-    video.addEventListener('volumechange', (e) =>{
-        console.log('Volumechange')
     });
 });
