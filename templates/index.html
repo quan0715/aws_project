@@ -28,8 +28,8 @@
             border-width: 0;
             border-bottom: 2px solid #D9D9D9;
             padding: 0;
-            background-color:#000000;
-            color: #FFC645;;
+            background-color:#101010;
+            color: #FFC645;
             font-family:inter;
             font-size: 16px;
             text-align:center;
@@ -40,10 +40,9 @@
         }
         .input_box:focus{
             outline: none !important;
-            color: #FFC645;;
+            color: #FFC645;
         }
-        .roundUI{
-            border-width: 0;
+        .roundUIButton{
             padding: 0;
             border-radius: 20px;
             font-family:inter;
@@ -52,21 +51,30 @@
             font-weight: 700;
             flex-direction: row;
             justify-content: center;
-            align-items: center;
+            border: 1px solid #5C5C5C;
+            background-color:#101010 ;
+            color: #FFC645;
+            cursor: pointer;
+        }
+        .roundUIButton:Hover{
+            background-color: #FFC645;
+            color: #373737;
+        }
+        .roundUIButton:Hover > img{
+            stroke: #101010;
         }
     </style>
-
-    <script type="text/javascript">
-        $(function() {
-            $(".enter_room_button").hover(function() {
-                $(".enter_room_button").css("background-color","#FFFFFF");
-                $(".enter_room_button").css("color","#FFC645");
-            },function() {
-                $(".enter_room_button").css("background-color","#FFC645");
-                $(".enter_room_button").css("color","#5C5C5C");
-            });
-        })
-    </script>
+{#    <script type="text/javascript">#}
+{#        $(function() {#}
+{#            $(".enter_room_button").hover(function() {#}
+{#                $(".enter_room_button").css("background-color","#FFFFFF");#}
+{#                $(".enter_room_button").css("color","#FFC645");#}
+{#            },function() {#}
+{#                $(".enter_room_button").css("background-color","#FFC645");#}
+{#                $(".enter_room_button").css("color","#5C5C5C");#}
+{#            });#}
+{#        })#}
+{#    </script>#}
 </head>
 
 <body style="height:100%;">
@@ -85,7 +93,7 @@
         </div>
 
         <div style="width:100%; height:60%;display: flex;justify-content: center; ">
-            <div style="width:50%; height:100%;background-color: #000000;border-radius: 30px; box-shadow: 0px 0px 10px 3px #FFC645;
+            <div style="width:50%; height:100%;background-color: #101010;border-radius: 30px; box-shadow: 0px 0px 10px 3px #FFC645;
 backdrop-filter: blur(20px);">
                 <div style="width:100%; height:16%;display: flex;justify-content: center;">
                     <div style="width:90%; height:100%;display: flex;align-items: center;">
@@ -106,15 +114,10 @@ backdrop-filter: blur(20px);">
 
                         </div>
                         <div style="width:100%; height:10%;display: flex;justify-content: center; margin-top: 10%;">
-                            <button class="enter_room_button roundUI"
-                                style="width:55%; height:100%;background-color:#FFC645 ;color: #5C5C5C; cursor: pointer;"
-                                type='submit'>
-                                ENTER ROOM
-                                <img src = "{{ url_for('static', filename='/images/arrow.svg') }}" alt="arrow_svg" style="width: 16px"/>
+                            <button class="enter_room_button roundUIButton" style="width:55%; height:100%;" type='submit'>
+                                ENTER ROOM &rarr;
                             </button>
-
                         </div>
-
                     </form>
                 </div>
             </div>
