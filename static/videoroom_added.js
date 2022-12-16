@@ -84,13 +84,14 @@ function setAudioState(flag) {
     }
 }
 
+
 document.addEventListener("DOMContentLoaded", (event) => {
     // 當document被完整的讀取跟解析後就會被觸發
     var audioEnabledField = document.getElementById("audio_enabled_inp");
     var videoEnabledField = document.getElementById("video_enabled_inp");
     var camera_image = document.querySelector("#camera_mute");
     var mic_image = document.querySelector("#mic_mute");
-    var video = document.querySelector("#videoElement")
+
     startCamera();
 
     camera_image.addEventListener('click', () => {
